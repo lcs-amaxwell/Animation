@@ -1,9 +1,7 @@
 //: [Previous](@previous) / [Next](@next)
-//: # Test Area
+//: # A Blank Canvas
 //:
-//: Use this page to experiment with a static image.
-//:
-//: When you perfect a technique, you can move it into the animated sketch.
+//: Use this page to experiment. Have fun!
 /*:
  ## Required code
  
@@ -15,7 +13,7 @@ import Cocoa
 import PlaygroundSupport
 
 // Create canvas
-let canvas = Canvas(width: 400, height: 300)
+let canvas = Canvas(width: 800, height: 600)
 
 /*:
  ## Add your code below
@@ -24,7 +22,58 @@ let canvas = Canvas(width: 400, height: 300)
  
  Use whitespace and comments as appropriate.
  */
-// Replace this comment with your first comment – what is the goal of the code you're about to write?
+
+
+
+// Clear the canvas
+canvas.fillColor = Color.white
+canvas.drawRectangle(bottomLeftX: 0, bottomLeftY: 0, width: 800, height: 600)
+
+// No borders
+canvas.drawShapesWithBorders = false
+
+// Move the origin to the middle of the canvasand
+canvas.translate(byX: 400, byY: 300)
+
+// Draw pumpkin relative to the origin
+canvas.fillColor = Color.orange
+
+// First make an ellipse to form the body
+canvas.drawEllipse(centreX: 0, centreY: 0, width: 100, height: 100)
+canvas.drawEllipse(centreX: 40, centreY: 0, width: 100, height: 100)
+
+// Make stem black
+canvas.fillColor = Color.black
+
+// Draw the stem
+canvas.drawEllipse(centreX: 20, centreY: 62, width: 30, height: 30)
+
+// Make stem properly shaped
+canvas.fillColor = Color.white
+
+// Make stem properly shaped
+canvas.drawEllipse(centreX: 30, centreY: 65, width: 30, height: 30)
+
+// Make the eyes yellow
+canvas.fillColor = Color.yellow
+
+// Draw the eyes
+canvas.drawRectangle(bottomLeftX: -20, bottomLeftY: 5, width: 20, height: 20)
+canvas.drawRectangle(bottomLeftX: 35, bottomLeftY: 5, width: 20, height: 20)
+
+// Draw the mouth
+canvas.drawEllipse(centreX: 20, centreY: -25, width: 80, height: 20)
+
+// Make mouth proper size
+canvas.fillColor = Color.orange
+canvas.drawEllipse(centreX: 20, centreY: -15, width: 80, height: 20)
+
+
+
+
+
+// Now "cut out" the wings and head by overlapping circles
+canvas.fillColor = Color.white
 
 
 
@@ -48,5 +97,3 @@ let canvas = Canvas(width: 400, height: 300)
  */
 // Don't remove the code below
 PlaygroundPage.current.liveView = canvas.imageView
-
-
